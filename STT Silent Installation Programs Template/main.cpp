@@ -56,11 +56,11 @@ int main() // Main Method...
         switch(archVersion)
         {
         case 101://This Case Is For Windows 10 And 11 x64...
-            drive = "x64\\setup.exe";
+            drive = "x64 Mozilla\\setup Mozilla.exe";
             executeProgram(0, drive, parameterOfEXE, fileName);
             break;
         case 100://This Case Is For Windows 10 x86...
-            drive = "x86\\setup.exe";
+            drive = "x86 Mozilla\\setup Mozilla.exe";
             executeProgram(0, drive, parameterOfEXE, fileName);
             break;
         case 61://This Case Is For Windows 7, 8 And 8.1 x64...
@@ -191,24 +191,24 @@ int executeProgram(int fromIsoOrNot,string pathOfEXE, string parameterOfEXE, str
         GetModuleFileName(NULL, buffer, MAX_PATH);
         string::size_type pos = string(buffer).find_last_of("\\/");
         string current_working_dir = string(buffer).substr(0, pos);
-        string dir = current_working_dir + "\\" + pathOfEXE;
+        string command = "\"\"" + current_working_dir + "\\" + pathOfEXE + "\" " + parameterOfEXE + "\"";
 
-        cout << "Executing : \"" << dir << " " << parameterOfEXE << "\"" << endl;
-        cout << "---------------------------------------------------------------" << endl;
         cout << "Wait For The " + fileName + " Installer To Exit...\n";
         cout << "---------------------------------------------------------------" << endl;
+        cout << "Executing : " << command  << endl;
+        cout << "---------------------------------------------------------------" << endl;
 
-        string command = "\"\"" + dir + "\"" + " " + parameterOfEXE + "\"";
         system(command.c_str());
     }
     else
     {
-        cout << "Executing : \"" << pathOfEXE  << " " << parameterOfEXE << "\"" << endl;
-        cout << "---------------------------------------------------------------" << endl;
+        string command = "\"" + pathOfEXE + " " + parameterOfEXE + "\"";
+
         cout << "Wait For The " + fileName + " Installer To Exit...\n";
         cout << "---------------------------------------------------------------" << endl;
+        cout << "Executing : " << command << endl;
+        cout << "---------------------------------------------------------------" << endl;
 
-        string command = "\"" + pathOfEXE + "\"" + " " + parameterOfEXE;
         system(command.c_str());
     }
     return 0;
