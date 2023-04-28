@@ -198,7 +198,7 @@ int executeProgram(int fromIsoOrNot,string pathOfEXE, string parameterOfEXE, str
         cout << "Wait For The " + fileName + " Installer To Exit...\n";
         cout << "---------------------------------------------------------------" << endl;
 
-        string command = "\"" + pathOfEXE + "\"" + " " + parameterOfEXE;
+        string command = "\"\"" + dir + "\"" + " " + parameterOfEXE + "\"";
         system(command.c_str());
     }
     else
