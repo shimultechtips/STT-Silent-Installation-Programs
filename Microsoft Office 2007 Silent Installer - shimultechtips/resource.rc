@@ -1,0 +1,32 @@
+#include "resource.h"
+#define VOS_NT_WINDOWS32 0x00040004L
+#define VFT_APP 0x00000001L
+
+IDI_ICON ICON "icon.ico"
+
+//Version Information
+1 VERSIONINFO
+FILEVERSION 1,0,0,1
+//PRODUCTVERSION 1,0,0,0
+FILETYPE VFT_APP
+{
+    BLOCK "StringFileInfo"
+    {
+        BLOCK "040904E4"
+        {
+            VALUE "ProductVersion", "1.0.0.1"
+            VALUE "FileDescription", "Microsoft Office 2007 Silent Installer - shimultechtips"
+            VALUE "OriginalFilename", "Microsoft Office 2007 Silent Installer - shimultechtips.exe"
+            VALUE "ProductName", "Part Of STT Silent Installation Programs"
+            VALUE "CompanyName", "Shimul Tech Tips"
+            VALUE "LegalCopyright", "© Shimul Tech Tips"
+            VALUE "LegalTrademarks", "® Shimul Tech Tips"
+            VALUE "Comments", "https://shimultechtips.wixsite.com/website/"
+            //VALUE "FileVersion", "1.0.0.0"
+        }
+    }
+    BLOCK "VarFileInfo"
+    {
+        VALUE "Translation", 0x0409, 1252 //Language Codes
+    }
+}

@@ -1,0 +1,123 @@
+# depslib dependency file v1.0
+1682395567 source:d:\projects\work\hardware\c++ projects\build\main.cpp
+	<cstdlib>
+	<cstring>
+	<direct.h>
+	<fstream>
+	<iostream>
+	<limits.h>
+	<ntstatus.h>
+	"resource.h"
+	<stdio.h>
+	<string>
+	<unistd.h>
+	<windows.h>
+	<winver.h>
+
+1675827207 d:\projects\work\hardware\c++ projects\build\resource.h
+
+1682395567 source:d:\c++ projects\build\main.cpp
+	<cstdlib>
+	<cstring>
+	<direct.h>
+	<fstream>
+	<iostream>
+	<limits.h>
+	<ntstatus.h>
+	"resource.h"
+	<stdio.h>
+	<string>
+	<unistd.h>
+	<windows.h>
+	<winver.h>
+
+1675827207 d:\c++ projects\build\resource.h
+
+1682408847 source:d:\c++ projects\build\resource.rc
+	"resource.h"
+
+1682519369 source:d:\c++ projects\c++ template (for iso and non iso)\resource.rc
+	"resource.h"
+
+1675827207 d:\c++ projects\c++ template (for iso and non iso)\resource.h
+
+1682518926 source:d:\c++ projects\c++ template (for iso and non iso)\main.cpp
+	<cstdlib>
+	<cstring>
+	<direct.h>
+	<fstream>
+	<iostream>
+	<limits.h>
+	<ntstatus.h>
+	"resource.h"
+	<stdio.h>
+	<string>
+	<unistd.h>
+	<windows.h>
+	<winver.h>
+
+1682566265 source:d:\projects\work\hardware\c++ projects\c++ template (for iso and non iso)\resource.rc
+	"resource.h"
+
+1675827207 d:\projects\work\hardware\c++ projects\c++ template (for iso and non iso)\resource.h
+
+1682519449 source:d:\projects\work\hardware\c++ projects\c++ template (for iso and non iso)\main.cpp
+	<cstdlib>
+	<cstring>
+	<direct.h>
+	<fstream>
+	<iostream>
+	<limits.h>
+	<ntstatus.h>
+	"resource.h"
+	<stdio.h>
+	<string>
+	<unistd.h>
+	<windows.h>
+	<winver.h>
+
+1682660777 source:d:\projects\work\hardware\c++ projects\stt silent installation programs template\resource.rc
+	"resource.h"
+
+1675827207 d:\projects\work\hardware\c++ projects\stt silent installation programs template\resource.h
+
+1682661010 source:d:\projects\work\hardware\c++ projects\stt silent installation programs template\main.cpp
+	<cstdlib>
+	<cstring>
+	<direct.h>
+	<fstream>
+	<iostream>
+	<limits.h>
+	<ntstatus.h>
+	"resource.h"
+	<stdio.h>
+	<string>
+	<unistd.h>
+	<windows.h>
+	<winver.h>
+
+1682661960 source:d:\projects\work\hardware\c++ projects\anydesk silent installer - shimultechtips\resource.rc
+	"resource.h"
+
+1675827207 d:\projects\work\hardware\c++ projects\anydesk silent installer - shimultechtips\resource.h
+
+1682664581 source:d:\projects\work\hardware\c++ projects\anydesk silent installer - shimultechtips\main.cpp
+	<cstdlib>
+	<cstring>
+	<direct.h>
+	<fstream>
+	<iostream>
+	<limits.h>
+	<ntstatus.h>
+	"resource.h"
+	<stdio.h>
+	<string>
+	<unistd.h>
+	<windows.h>
+	<winver.h>
+
+1682672473 source:d:\projects\work\hardware\c++ projects\vlc media player silent installer - shimultechtips\resource.rc
+	"resource.h"
+
+1675827207 d:\projects\work\hardware\c++ projects\vlc media player silent installer - shimultechtips\resource.h
+
