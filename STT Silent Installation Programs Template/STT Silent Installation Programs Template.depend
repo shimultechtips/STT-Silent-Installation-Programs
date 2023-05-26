@@ -101,3 +101,23 @@
 
 1675827207 d:\projects\work\hardware\c++ projects\templates\stt silent installation programs template\resource.h
 
+1682660777 source:d:\projects\work\hardware\c++ projects\template\stt silent installation programs template\resource.rc
+	"resource.h"
+
+1675827207 d:\projects\work\hardware\c++ projects\template\stt silent installation programs template\resource.h
+
+1683557346 source:d:\projects\work\hardware\c++ projects\template\stt silent installation programs template\main.cpp
+	<cstdlib>
+	<direct.h>
+	<limits.h>
+	<winver.h>
+	<unistd.h>
+	<cstring>
+	<fstream>
+	<iostream>
+	<ntstatus.h>
+	"resource.h"
+	<stdio.h>
+	<string>
+	<windows.h>
+

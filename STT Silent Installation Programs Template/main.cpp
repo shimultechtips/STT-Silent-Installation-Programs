@@ -2,26 +2,25 @@
 // For Testing Purpose, I've Used Mozilla Firefox Setup Files In This Template...
 // Program Logics And 75%(Approx.) Of The Codes Are Written By Myself. The Remaining 25%(Approx.) Codes Are Collected From All Over The Internet...
 // Some Mistakes May Remain In This Code. But I Will Fix Them Soon. Thanks...
-
+/*
 #include <cstdlib>
-#include <cstring>
 #include <direct.h>
+#include <limits.h>
+#include <winver.h>
+*/
+#include <unistd.h>
+#include <cstring>
 #include <fstream>
 #include <iostream>
-#include <limits.h>
 #include <ntstatus.h>
 #include "resource.h"
 #include <stdio.h>
 #include <string>
-#include <unistd.h>
 #include <windows.h>
-#include <winver.h>
-
 using namespace std;
 
 /*---------------------------------------------------------*/
 /*Functions Declarations*/
-HWND WINAPI GetConsoleWindowNT(void); //This Line Is Used By The GetConsoleWindowNT() Function...
 typedef NTSTATUS(WINAPI* RtlGetVersionPtr)(PRTL_OSVERSIONINFOW);// This Line Is Used By The version() Function...
 int archVer(); //This Line Is Used By The archVer() Function...
 int executeProgram(int fromIsoOrNot,string pathOfEXE, string parameterOfEXE, string fileName);
@@ -35,9 +34,8 @@ int author();
 int main() // Main Method...
 {
     // Sets The Console Window Color And Window Size...
-    system("color E0");
-    HWND hWnd=GetConsoleWindowNT();
-    MoveWindow(hWnd,0,0,550,400,TRUE);
+    system("color E0 & mode con: cols=55 lines=25 & Title Created By Shimul Tech Tips Team");
+    //system("Title Created By Shimul Tech Tips Team");
     author();// Calls The author() Function...
     int archVersion = archVer();// Calls archVer() Function And Keeps The archVer() Functions Return Data To archVersion...
     // This Two Line Of Code Is Used For The unMountISO() And mountISO() And checkWincdEmu() Function To Check The Windows Architecture...
@@ -81,7 +79,7 @@ int main() // Main Method...
             break;
         default://This Case Is For Unsupported OS...
             cout << "Your OS Version Is Unsupported By This Executable File..." << endl;
-            cout << "---------------------------------------------------------------" << endl;
+            cout << "-------------------------------------------------------" << endl;
             system("pause");
             break;
         }
@@ -91,28 +89,6 @@ int main() // Main Method...
 }
 
 // Function Bodies...
-/*---------------------------------------------------------*/
-HWND WINAPI GetConsoleWindowNT(void) // This Function Sets The Console Window...
-{
-    //declare function pointer type
-    typedef HWND WINAPI(*GetConsoleWindowT)(void);
-    //declare one such function pointer
-    GetConsoleWindowT GetConsoleWindow;
-    //get a handle on kernel32.dll
-    HMODULE hk32Lib = GetModuleHandle(TEXT("KERNEL32.DLL"));
-    //assign procedure address to function pointer
-    GetConsoleWindow = (GetConsoleWindowT)GetProcAddress(hk32Lib
-                       ,TEXT("GetConsoleWindow"));
-    //check if the function pointer is valid
-    //since the function is undocumented
-    if(GetConsoleWindow == NULL)
-    {
-        return NULL;
-    }
-    //call the undocumented function
-    return GetConsoleWindow();
-}
-
 /*---------------------------------------------------------*/
 int archVer() // This Function Gets The OS Architecture And Version...
 {
@@ -174,7 +150,7 @@ int archVer() // This Function Gets The OS Architecture And Version...
     }
 
     cout << "Windows Version : " << osvi.dwMajorVersion << "." << osvi.dwMinorVersion << "." << osvi.dwBuildNumber << "...\n" << "Windows Architecture : " << archResult << "..." << endl;
-    cout << "---------------------------------------------------------------" << endl;
+    cout << "-------------------------------------------------------" << endl;
 
     FreeLibrary(hNtdll);
     archVer = to_string(osvi.dwMajorVersion) + to_string(result);
@@ -194,9 +170,9 @@ int executeProgram(int fromIsoOrNot,string pathOfEXE, string parameterOfEXE, str
         string command = "\"\"" + current_working_dir + "\\" + pathOfEXE + "\" " + parameterOfEXE + "\"";
 
         cout << "Wait For The " + fileName + " Installer To Exit...\n";
-        cout << "---------------------------------------------------------------" << endl;
+        cout << "-------------------------------------------------------" << endl;
         cout << "Executing : " << command  << endl;
-        cout << "---------------------------------------------------------------" << endl;
+        cout << "-------------------------------------------------------" << endl;
 
         system(command.c_str());
     }
@@ -205,9 +181,9 @@ int executeProgram(int fromIsoOrNot,string pathOfEXE, string parameterOfEXE, str
         string command = "\"" + pathOfEXE + " " + parameterOfEXE + "\"";
 
         cout << "Wait For The " + fileName + " Installer To Exit...\n";
-        cout << "---------------------------------------------------------------" << endl;
+        cout << "-------------------------------------------------------" << endl;
         cout << "Executing : " << command << endl;
-        cout << "---------------------------------------------------------------" << endl;
+        cout << "-------------------------------------------------------" << endl;
 
         system(command.c_str());
     }
@@ -221,16 +197,16 @@ int unMountISO(int arch) // This Function Unmounts All Mounted ISO's...
     if (arch==0)
     {
         string dir ="\"\"C:\\Program Files\\WinCDEmu\\batchmnt.exe\" /unmountall\"";
-        cout << "---------------------------------------------------------------" << endl;
+        cout << "-------------------------------------------------------" << endl;
         system(dir.c_str());
     }
     else
     {
         string dir ="\"\"C:\\Program Files (x86)\\WinCDEmu\\batchmnt.exe\" /unmountall\"";
-        cout << "---------------------------------------------------------------" << endl;
+        cout << "-------------------------------------------------------" << endl;
         system(dir.c_str());
     }
-    cout << "\n---------------------------------------------------------------" << endl;
+    cout << "\n-------------------------------------------------------" << endl;
     return 0;
 }
 
@@ -253,7 +229,7 @@ int mountISO(int arch, string isoName)// This Function Mounts The Given ISO...
         dir ="\"\"C:\\Program Files (x86)\\WinCDEmu\\batchmnt.exe\" \"" + current_working_dir + "\\" + isoName + "\"\"";
         system(dir.c_str());
     }
-    cout << "---------------------------------------------------------------" << endl;
+    cout << "-------------------------------------------------------" << endl;
     sleep(3);
     return 0;
 }
@@ -277,12 +253,12 @@ int checkWincdEmu(int arch)// This Function Checks For WinCDEmu Installation...
     if (infile.good())
     {
         cout << "WinCDEmu Installed..." << endl;
-        cout << "---------------------------------------------------------------" << endl;
+        cout << "-------------------------------------------------------" << endl;
     }
     else
     {
         cout << "WinCDEmu Not Installed...\nPlease Install WinCDEmu First...\nThen Run This File Again..." << endl;
-        cout << "---------------------------------------------------------------" << endl;
+        cout << "-------------------------------------------------------" << endl;
         system("pause");
         exist = 0;
     }
@@ -312,6 +288,6 @@ string searchMountedDrive(string setupEXE)// This Function Search For Mounted IS
 int author()// This Function Shows My Name...
 {
     cout << "This Program Is Created By Shimul Tech Tips Team...\nA Part Of The STT Silent Installation Programs..." << endl;
-    cout << "---------------------------------------------------------------" << endl;
+    cout << "-------------------------------------------------------" << endl;
     return 0;
 }
